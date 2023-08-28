@@ -2,41 +2,36 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 
-import Avatar from "./avatar";
 import Item from "./item";
 
-export default function ResponsiveGrid({ size, avatar }) {
+export default function ResponsiveGrid({ size, icon, hobbies }) {
   const columnSettings = {
     xs: 2,
-    sm: size === 2 ? 6 : 4,
-    md: size === 2 ? 6 : 4,
+    sm: size === 2 ? 6 : 3,
+    md: size === 2 ? 6 : 3,
   };
 
-  // number of columns 
+  // number of columns
   const spacing = {
-    xs: size === 2 ? 1 : 3,
+    xs: 2,
     sm: 2,
     md: 3,
   };
-
+   console.log(hobbies)
   return (
     <Box sx={{ flexGrow: 1, padding: 2 }}>
-      <Grid
-        container
-        spacing={spacing}
-        columns={{ xs: 4, sm: 8, md: 12 }}>
-        {Array.from(Array(size)).map((_, index) => (
+      <Grid container spacing={spacing} columns={{ xs: 4, sm: 8, md: 12 }}>
+     
+        {hobbies.map((hobby, index) => (
           <Grid
             key={index}
             xs={columnSettings.xs}
             sm={columnSettings.sm}
             md={columnSettings.md}>
-           
             <Item>
-              <Avatar textAlign="center"/>
-                  Content
+              {icon}
+              {hobby}
             </Item>
-
           </Grid>
         ))}
       </Grid>

@@ -11,15 +11,44 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Avatar from "./components/avatar";
 import Item from "./components/item";
 import CustomGrid from "./components/res_grid";
+import FlipCard from "./components/flip_cards";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const columnSettings = {
-    xs: 2,
+    xs: 6,
     sm: 6,
     md: 6,
   };
+
+  // Hobbies
+  const hobbyList = [
+    "Financial Exploration",
+    "Active Lifstyle",
+    "Entertainment",
+    "Sleeping",
+  ];
+
+  // Soft Skills
+  const teamPlayer = [
+    "Effective Communication",
+    "Teamwork",
+    "Leadership",
+    "Transparency",
+  ];
+  const critThinking = [
+    "Critical Thinking",
+    "Problem Solving",
+    "Analytical Skills",
+    "Decision Making",
+  ];
+  const creativityArr = [
+    "Creativity",
+    "Innovation",
+    "Out-of-the-box Thinking",
+    "Adaptability",
+  ];
 
   return (
     <>
@@ -50,8 +79,8 @@ export default function Home() {
             md={columnSettings.md}>
             {/* <Item> */}
             <Typography variant="body1" gutterBottom>
-              body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
+              blanditiis tenetur unde suscipit, quam beatae rerum inventore
               consectetur, neque doloribus, cupiditate numquam dignissimos
               laborum fugiat deleniti? Eum quasi quidem quibusdam.
             </Typography>
@@ -61,28 +90,33 @@ export default function Home() {
       </Box>
 
       {/* Hobbies  */}
-      <Typography textAlign="center" variant="h2" gutterBottom>
+      <Typography textAlign="center" variant="h3" gutterBottom>
         Hobbies
       </Typography>
       {/* BUG : not responsive in mobile  */}
-      <CustomGrid size={3} icon={<Avatar />}></CustomGrid>
+      <CustomGrid
+        size={4}
+        icon={<Avatar textAlign="center" />}
+        hobbies={hobbyList} />
 
       {/* Soft Skills */}
-      <Typography textAlign="center" variant="h2" gutterBottom>
+      <Typography textAlign="center" variant="h3" gutterBottom>
         Soft Skills
       </Typography>
+      <FlipCard title="Team Player" skills={teamPlayer} />
+      <FlipCard title="Critical Thinker" skills={critThinking} />
+      <FlipCard title="Curious Cat" skills={creativityArr} />
 
       {/* Technical Skills */}
-      <Typography textAlign="center" variant="h2" gutterBottom>
+      <Typography textAlign="center" variant="h3" gutterBottom>
         Technical Skills
       </Typography>
 
-       {/* Project Showcase */}
-       <Typography textAlign="center" variant="h2" gutterBottom>
+      {/* Project Showcase */}
+      <Typography textAlign="center" variant="h3" gutterBottom>
         Project Showcase
       </Typography>
-      <CustomGrid size={3} icon={<Avatar />}></CustomGrid>
-
+      {/* <CustomGrid size={4} icon={<Avatar /> } hobbies={hobbyList}></CustomGrid> */} 
     </>
   );
 }
