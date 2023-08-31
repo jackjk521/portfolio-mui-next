@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
 
-function ResponsiveAvatar() {
+function ResponsiveIcons() {
   return (
     <div>
       <Avatar
@@ -16,4 +16,4 @@ function ResponsiveAvatar() {
   );
 }
 
-export default ResponsiveAvatar;
+export default ResponsiveIcons;

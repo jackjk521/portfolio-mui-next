@@ -3,17 +3,17 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "../styles/Home.module.css";
 
+// Material UI
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
 
 // Components
-import Avatar from "./components/avatar";
+import Icon from "./components/icon";
 import Item from "./components/item";
 import CustomGrid from "./components/res_grid";
-import FlipCard from "./components/flip_cards";
-
-const inter = Inter({ subsets: ["latin"] });
+import SoftSkillsGrid from "./components/soft_skills";
+import Pills from "./components/pills"
 
 export default function Home() {
   const columnSettings = {
@@ -28,26 +28,6 @@ export default function Home() {
     "Active Lifstyle",
     "Entertainment",
     "Sleeping",
-  ];
-
-  // Soft Skills
-  const teamPlayer = [
-    "Effective Communication",
-    "Teamwork",
-    "Leadership",
-    "Transparency",
-  ];
-  const critThinking = [
-    "Critical Thinking",
-    "Problem Solving",
-    "Analytical Skills",
-    "Decision Making",
-  ];
-  const creativityArr = [
-    "Creativity",
-    "Innovation",
-    "Out-of-the-box Thinking",
-    "Adaptability",
   ];
 
   return (
@@ -68,7 +48,14 @@ export default function Home() {
             sm={columnSettings.sm}
             md={columnSettings.md}>
             <Item>
-              <Avatar />
+              {/* Avatar Image  */}
+              <Image
+                src="/icon-512x512.png"
+                layout="responsive"
+                width="512"
+                height="512"
+                alt="Avatar"
+              />
             </Item>
           </Grid>
 
@@ -96,16 +83,16 @@ export default function Home() {
       {/* BUG : not responsive in mobile  */}
       <CustomGrid
         size={4}
-        icon={<Avatar textAlign="center" />}
-        hobbies={hobbyList} />
+        icon={<Icon textAlign="center" />}
+        hobbies={hobbyList}
+      />
 
       {/* Soft Skills */}
       <Typography textAlign="center" variant="h3" gutterBottom>
         Soft Skills
       </Typography>
-      <FlipCard title="Team Player" skills={teamPlayer} />
-      <FlipCard title="Critical Thinker" skills={critThinking} />
-      <FlipCard title="Curious Cat" skills={creativityArr} />
+
+      <SoftSkillsGrid />
 
       {/* Technical Skills */}
       <Typography textAlign="center" variant="h3" gutterBottom>
@@ -116,7 +103,8 @@ export default function Home() {
       <Typography textAlign="center" variant="h3" gutterBottom>
         Project Showcase
       </Typography>
-      {/* <CustomGrid size={4} icon={<Avatar /> } hobbies={hobbyList}></CustomGrid> */} 
+      <Pills/>
+      {/* <CustomGrid size={4} icon={<Avatar /> } hobbies={hobbyList}></CustomGrid> */}
     </>
   );
 }
