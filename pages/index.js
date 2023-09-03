@@ -12,8 +12,10 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Icon from "./components/icon";
 import Item from "./components/item";
 import CustomGrid from "./components/res_grid";
+import HobbiesGrid from "./components/hobbies";
 import SoftSkillsGrid from "./components/soft_skills";
-import Pills from "./components/pills"
+import TechnicalSkillsGrid from "./components/technical_skills";
+import Pills from "./components/pills";
 
 export default function Home() {
   const columnSettings = {
@@ -25,9 +27,9 @@ export default function Home() {
   // Hobbies
   const hobbyList = [
     "Financial Exploration",
-    "Active Lifstyle",
+    "Active Lifestyle",
     "Entertainment",
-    "Sleeping",
+    "Travelling",
   ];
 
   return (
@@ -50,11 +52,12 @@ export default function Home() {
             <Item>
               {/* Avatar Image  */}
               <Image
-                src="/icon-512x512.png"
+                src="/images/space-dog.png"
                 layout="responsive"
-                width="512"
-                height="512"
+                width={100}
+                height={100}
                 alt="Avatar"
+                style={{ borderRadius: "50%" }}
               />
             </Item>
           </Grid>
@@ -63,47 +66,65 @@ export default function Home() {
           <Grid
             xs={columnSettings.xs}
             sm={columnSettings.sm}
-            md={columnSettings.md}>
-            {/* <Item> */}
+            md={columnSettings.md}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}>
             <Typography variant="body1" gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
               blanditiis tenetur unde suscipit, quam beatae rerum inventore
               consectetur, neque doloribus, cupiditate numquam dignissimos
               laborum fugiat deleniti? Eum quasi quidem quibusdam.
             </Typography>
-            {/* </Item> */}
           </Grid>
         </Grid>
       </Box>
 
       {/* Hobbies  */}
-      <Typography textAlign="center" variant="h3" gutterBottom>
+      <Typography
+        textAlign="center"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold" }}
+        gutterBottom>
         Hobbies
       </Typography>
-      {/* BUG : not responsive in mobile  */}
-      <CustomGrid
-        size={4}
-        icon={<Icon textAlign="center" />}
-        hobbies={hobbyList}
-      />
+
+      <HobbiesGrid size={4} hobbies={hobbyList} />
 
       {/* Soft Skills */}
-      <Typography textAlign="center" variant="h3" gutterBottom>
+      <Typography
+        textAlign="center"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold" }}
+        gutterBottom>
         Soft Skills
       </Typography>
 
+      {/* BUG : not responsive in mobile  */}
       <SoftSkillsGrid />
 
       {/* Technical Skills */}
-      <Typography textAlign="center" variant="h3" gutterBottom>
+      <Typography
+        textAlign="center"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold" }}
+        gutterBottom>
         Technical Skills
       </Typography>
 
+      <TechnicalSkillsGrid />
+
       {/* Project Showcase */}
-      <Typography textAlign="center" variant="h3" gutterBottom>
+      <Typography
+        textAlign="center"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold" }}
+        gutterBottom>
         Project Showcase
       </Typography>
-      <Pills/>
+      <Pills />
       {/* <CustomGrid size={4} icon={<Avatar /> } hobbies={hobbyList}></CustomGrid> */}
     </>
   );

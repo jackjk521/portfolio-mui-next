@@ -23,7 +23,7 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#333",
+        backgroundColor: "#DEB887 ",
         color: "#fff",
         py: 3,
         textAlign: "center",
@@ -35,22 +35,7 @@ export default function Footer() {
         Built with Next.js, Material-UI and PWA
       </Typography>
       <Typography variant="body2">
-        Icons made by{" "}
-        <Link
-          href="https://www.freepik.com"
-          title="Freepik"
-          target="_blank"
-          rel="noopener noreferrer">
-          Freepik
-        </Link>{" "}
-        from{" "}
-        <Link
-          href="https://www.flaticon.com/"
-          title="Flaticon"
-          target="_blank"
-          rel="noopener noreferrer">
-          www.flaticon.com
-        </Link>
+        
       </Typography>
       
       {/* Icons  */}

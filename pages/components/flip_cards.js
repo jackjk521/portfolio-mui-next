@@ -15,7 +15,7 @@ const FlipCard = ({ title, skills }) => {
       >
         <FrontSide
           style={{
-            backgroundColor: "#41669d",
+            backgroundColor: "#DEB887",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -28,7 +28,7 @@ const FlipCard = ({ title, skills }) => {
         </FrontSide>
         <BackSide
           style={{
-            backgroundColor: "#175852",
+            backgroundColor: "#DEB887",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
