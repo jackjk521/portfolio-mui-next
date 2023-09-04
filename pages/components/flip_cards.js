@@ -3,15 +3,25 @@ import Flippy, { FrontSide, BackSide } from "react-flippy";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const FlipCard = ({ title, skills }) => {
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+
+  const cardStyle = {
+    width: isSmallScreen ? "100%" : "25rem",
+    height: isSmallScreen ? "auto" : "15rem",
+    marginBottom: isSmallScreen ? "1rem" : 0,
+    padding:  isSmallScreen ? "0.5rem" : "1rem"
+  };
+
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 1 }}>
+    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center"}}>
       <Flippy
         flipOnHover={true}
         flipOnClick={true}
         flipDirection="vertical"
-        style={{ width: "25rem", height: "15rem" }}  // Adjust dimensions
+        style={cardStyle}
       >
         <FrontSide
           style={{
@@ -19,10 +29,10 @@ const FlipCard = ({ title, skills }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: "8px", // Add padding for smaller screens
+            padding: isSmallScreen ? "1rem" : "8px",
           }}
         >
-          <Typography textAlign="center" variant="h6" gutterBottom>
+          <Typography textAlign="center" variant="h4" sx={{fontWeight: "bold"}} gutterBottom>
             {title}
           </Typography>
         </FrontSide>
@@ -32,7 +42,7 @@ const FlipCard = ({ title, skills }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: "8px", // Add padding for smaller screens
+            padding: isSmallScreen ? "1rem" : "8px",
           }}
         >
           <ul style={{ listStyle: "none", padding: 0, textAlign: "center" }}>

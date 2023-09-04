@@ -30,8 +30,8 @@ export default function HobbiesGrid({ size, hobbies }) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2, px: 15 }}>
-      <Grid container spacing={spacing} columns={{ xs: 4, sm: 8, md: 12 }}>
+    <Box sx={{ flexGrow: 1, padding: 2}}>
+      <Grid container spacing={2} justifyContent="center" columns={{ xs: 2 , sm: 8, md: 12 }}>
         {/* Financial Exploration  */}
         <Grid
           xs={columnSettings.xs}
