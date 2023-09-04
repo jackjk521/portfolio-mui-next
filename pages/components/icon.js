@@ -1,7 +1,8 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
+import Image from "next/image"
 
-import PersonIcon from "@mui/icons-material/Person"; // Import the icon components you need
+// import PersonIcon from "@mui/icons-material/Person"; // Import the icon components you need
 
 function ResponsiveIcons({ altName }) {
   // // Define a mapping of altName values to corresponding icon components
@@ -15,8 +16,7 @@ function ResponsiveIcons({ altName }) {
 
   return (
     <div>
-      {/* {selectedIcon == "react" ? ( */}
-        <Avatar
+      {/* <Avatar
           alt={altName}
           src={`/images/${altName.toLowerCase()}.png`} // Fix the src attribute
           sx={{
@@ -24,11 +24,23 @@ function ResponsiveIcons({ altName }) {
             height: { xs: 64, sm: 80, md: 100 }, // Adjust values as needed
           }}
         >
-        </Avatar>
-      {/* ) : (
-        // Render a default icon or message if altName doesn't match any known icons
-        <Avatar alt={altName} src={src} />
-      )} */}
+        </Avatar> */}
+
+      <div
+        style={{
+          width: "100px", // Adjust the size as needed
+          height: "100px", // Adjust the size as needed
+          // borderRadius: "50%", // Make it round
+          overflow: "hidden", // Hide any content that overflows the rounded shape
+        }}>
+        <Image
+          src={`/images/${altName.toLowerCase()}.png`}
+          alt={altName}
+          width={100} // Adjust the size as needed
+          height={100} // Adjust the size as needed
+          layout="responsive" // Make it responsive
+        />
+      </div>
     </div>
   );
 }

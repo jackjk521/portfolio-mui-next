@@ -16,6 +16,7 @@ import HobbiesGrid from "./components/hobbies";
 import SoftSkillsGrid from "./components/soft_skills";
 import TechnicalSkillsGrid from "./components/technical_skills";
 import Pills from "./components/pills";
+import ContactFrom from "./components/contact_form";
 
 export default function Home() {
   const columnSettings = {
@@ -125,7 +126,19 @@ export default function Home() {
         Project Showcase
       </Typography>
       <Pills />
-      {/* <CustomGrid size={4} icon={<Avatar /> } hobbies={hobbyList}></CustomGrid> */}
+
+      {/*Contact Me */}
+      <Typography
+        textAlign="center"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold" }}
+        gutterBottom>
+        Contact Me
+      </Typography>
+          <Typography textAlign="center" variant="h6" gutterBottom>
+            Interested on my services and want to reach out then here is your chance
+          </Typography>
+      <ContactFrom />
     </>
   );
 }

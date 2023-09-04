@@ -53,14 +53,70 @@ export default function TechnicalSkillsGrid() {
     setExpanded(newExpanded ? panel : false);
   };
 
+  // Featured Skills Information
   const featuredSkills = ["React", "MySQL", "Laravel"];
-  const ratings = {
+  const featuredRatings = {
     React: 4,
     MySQL: 5,
     Laravel: 4,
   };
 
-  console.log(ratings["React"])
+  // Web Dev Skills Information
+  const webSkills = ["HTML", "CSS", "PhpMyAdmin", "NodeJS", "Javascript", "CodeIgniter", "MongoDB", "Express", "jQuery"];
+  const webRatings = {
+    HTML: 4,
+    CSS: 5,
+    PhpMyAdmin: 4,
+    NodeJS: 4,
+    Javascript: 5,
+    CondeIgniter: 4,
+    MongoDB: 4,
+    Express: 4,
+    jQuery: 3,
+  };
+
+  // OOP Skills Information
+  const OOPSkills = ["Java", "C#", "PHP"];
+  const OOPRatings = {
+    Java: 4,
+    "C#": 2,
+    PHP: 4,
+  };
+
+  // DA Skills Information
+  const dataSkills = ["Python", "PowerBI", "R", "SQL"];
+  const dataRatings = {
+    Python: 4,
+    PowerBI: 2,
+    R: 3,
+    SQL: 5,
+  };
+
+  // Hosting Skills Information
+  const hostingSkills = ["Bluehost", "Railway", "HostGator", "Vercel"];
+  const hostingRatings = {
+    Bluehost: 4,
+    Railway: 5,
+    HostGator: 3,
+    Vercel: 5,
+  };
+
+  // No Code Skills Information
+  const noCodeSkills = ["Webflow", "Bubble", "WordPress"];
+  const noCodeRatings = {
+    Webflow: 4,
+    Bubble: 3,
+    WordPress: 4,
+  };
+
+    // Version control or DevOps Skills Information
+    const versionControlSkills = ["Git", "BitBucket", "Azure"];
+    const versionControlRatings = {
+      Git: 5,
+      BitBucket: 5,
+      Azure: 3,
+    };
+
   return (
     <Box
       container
@@ -79,40 +135,76 @@ export default function TechnicalSkillsGrid() {
         expanded={expanded === "featuredSkills"}
         onChange={handleChange("featuredSkills")}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Feature Technical Skills</Typography>
+          <Typography>Featured</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <CustomGrid skills={featuredSkills} ratings={ratings} />
+          <CustomGrid skills={featuredSkills} ratings={featuredRatings} />
         </AccordionDetails>
       </Accordion>
+
       <Accordion
-        expanded={expanded === "panel2"}
-        onChange={handleChange("panel2")}>
+        expanded={expanded === "webDevSkills"}
+        onChange={handleChange("webDevSkills")}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Category #2</Typography>
+          <Typography>Web Development</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+          <CustomGrid skills={webSkills} ratings={webRatings} />
         </AccordionDetails>
       </Accordion>
+
       <Accordion
-        expanded={expanded === "panel3"}
-        onChange={handleChange("panel3")}>
+        expanded={expanded === "OOPSkills"}
+        onChange={handleChange("OOPSkills")}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Category #3</Typography>
+          <Typography>Object Oriented Programming</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+          <CustomGrid skills={OOPSkills} ratings={OOPRatings} />
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        expanded={expanded === "dataSkills"}
+        onChange={handleChange("dataSkills")}>
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography>Data Analytics</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <CustomGrid skills={dataSkills} ratings={dataRatings} />
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        expanded={expanded === "hostingSkills"}
+        onChange={handleChange("hostingSkills")}>
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography>Hosting Services</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <CustomGrid skills={hostingSkills} ratings={hostingRatings} />
+        </AccordionDetails>
+      </Accordion>
+
+       <Accordion
+        expanded={expanded === "noCodeSkills"}
+        onChange={handleChange("noCodeSkills")}>
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography> No Code Platforms</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <CustomGrid skills={noCodeSkills} ratings={noCodeRatings} />
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion
+        expanded={expanded === "versionControlSkills"}
+        onChange={handleChange("versionControlSkills")}>
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
+          <Typography> Version Control or DevOps</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <CustomGrid skills={versionControlSkills} ratings={versionControlRatings} />
         </AccordionDetails>
       </Accordion>
     </Box>
