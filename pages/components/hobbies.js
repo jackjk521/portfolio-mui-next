@@ -11,7 +11,6 @@ import Item from "./item";
 // Icons
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import SlideshowIcon from "@mui/icons-material/Slideshow";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 
@@ -30,8 +29,12 @@ export default function HobbiesGrid({ size, hobbies }) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2}}>
-      <Grid container spacing={2} justifyContent="center" columns={{ xs: 2 , sm: 8, md: 12 }}>
+    <Box sx={{ flexGrow: 1, padding: 2, px: "3rem"}}>
+      <Grid
+        container
+        spacing={2}
+        justifyContent="center"
+        columns={{ xs: 2, sm: 8, md: 12 }}>
         {/* Financial Exploration  */}
         <Grid
           xs={columnSettings.xs}

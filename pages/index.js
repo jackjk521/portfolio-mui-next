@@ -7,6 +7,7 @@ import styles from "../styles/Home.module.css";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Unstable_Grid2";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 // Components
 import Icon from "./components/icon";
@@ -33,6 +34,19 @@ export default function Home() {
     "Travelling",
   ];
 
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  
+  const avatarStyle = {
+    xs: isSmallScreen ? 12 : columnSettings.xs,
+    sm: columnSettings.sm,
+    md: columnSettings.md,
+  };
+
+  const descriptionStyle = {
+    textAlign: isSmallScreen ? "center" : "left",
+    fontSize: isSmallScreen ? "1rem" : "1.125rem", // Adjust font size as needed
+  };
+
   return (
     <>
       <Head>
@@ -47,14 +61,12 @@ export default function Home() {
         <Grid container spacing={2}>
           {/* Avatar  */}
           <Grid
-            xs={columnSettings.xs}
-            sm={columnSettings.sm}
-            md={columnSettings.md}>
+            {...avatarStyle}>
             <Item>
               {/* Avatar Image  */}
               <Image
                 src="/images/space-dog.png"
-                layout="responsive"
+                layout="intrinsic"
                 width={100}
                 height={100}
                 alt="Avatar"
@@ -65,15 +77,13 @@ export default function Home() {
 
           {/* Description  */}
           <Grid
-            xs={columnSettings.xs}
-            sm={columnSettings.sm}
-            md={columnSettings.md}
+            {...avatarStyle}
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body1" gutterBottom sx={descriptionStyle}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
               blanditiis tenetur unde suscipit, quam beatae rerum inventore
               consectetur, neque doloribus, cupiditate numquam dignissimos
@@ -92,19 +102,21 @@ export default function Home() {
         Hobbies
       </Typography>
 
-      <HobbiesGrid size={4} hobbies={hobbyList} />
+      <HobbiesGrid id="" size={4} hobbies={hobbyList} />
 
       {/* Soft Skills */}
-      <Typography
-        textAlign="center"
-        variant="h3"
-        sx={{ p: 3, fontWeight: "bold" }}
-        gutterBottom>
-        Soft Skills
-      </Typography>
+      <div id="Skills">
+        <Typography
+          textAlign="center"
+          variant="h3"
+          sx={{ p: 3, fontWeight: "bold" }}
+          gutterBottom>
+          Soft Skills
+        </Typography>
+        {/* BUG : not responsive in mobile  */}
 
-      {/* BUG : not responsive in mobile  */}
-      <SoftSkillsGrid />
+        <SoftSkillsGrid />
+      </div>
 
       {/* Technical Skills */}
       <Typography
@@ -118,14 +130,16 @@ export default function Home() {
       <TechnicalSkillsGrid />
 
       {/* Project Showcase */}
-      <Typography
-        textAlign="center"
-        variant="h3"
-        sx={{ p: 3, fontWeight: "bold" }}
-        gutterBottom>
-        Project Showcase
-      </Typography>
-      <Pills />
+      <div id="Projects">
+        <Typography
+          textAlign="center"
+          variant="h3"
+          sx={{ p: 3, fontWeight: "bold" }}
+          gutterBottom>
+          Project Showcase
+        </Typography>
+        <Pills />
+      </div>
 
       {/*Contact Me */}
       <Typography
@@ -135,9 +149,9 @@ export default function Home() {
         gutterBottom>
         Contact Me
       </Typography>
-          <Typography textAlign="center" variant="h6" gutterBottom>
-            Interested on my services and want to reach out then here is your chance
-          </Typography>
+      <Typography textAlign="center" variant="h6" gutterBottom>
+        Interested on my services and want to reach out then here is your chance
+      </Typography>
       <ContactFrom />
     </>
   );

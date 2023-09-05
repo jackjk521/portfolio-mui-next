@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+
+import Link from "next/link";
+
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -14,7 +17,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
 // Menu Items
-const pages = ["Projects", "Skills", "Blog"];
+const pages = ["Projects", "Skills"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar() {
@@ -40,10 +43,9 @@ function ResponsiveAppBar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        
-        {/* Logo Icon  */}
+          {/* Logo Icon  */}
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-        {/* Logo Name  */}
+          {/* Logo Name  */}
           <Typography
             variant="h6"
             noWrap
@@ -60,7 +62,7 @@ function ResponsiveAppBar() {
             }}>
             LOGO
           </Typography>
-        
+
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -91,15 +93,17 @@ function ResponsiveAppBar() {
               }}>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center">
+                    <Link href={`#${page}`}>{page}</Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
-        {/* Logo Icon  */}
+          {/* Logo Icon  */}
           <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-        {/* Logo Name  */}
+          {/* Logo Name  */}
           <Typography
             variant="h5"
             noWrap
@@ -117,20 +121,20 @@ function ResponsiveAppBar() {
             }}>
             LOGO
           </Typography>
-        
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}>
-                {page}
+                <Link href={`#${page}`}>{page}</Link>
               </Button>
             ))}
           </Box>
 
-        {/* Avatar  */}
-          <Box sx={{ flexGrow: 0 }}>
+          {/* Avatar  */}
+          {/* <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -157,8 +161,7 @@ function ResponsiveAppBar() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
-
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
