@@ -86,10 +86,10 @@ export default function TechnicalSkillsGrid() {
   };
 
   // OOP Skills Information
-  const OOPSkills = ["Java", "C#", "PHP"];
+  const OOPSkills = ["Java", "CSharp", "PHP"];
   const OOPRatings = {
     Java: 4,
-    "C#": 2,
+    CSharp: 2,
     PHP: 4,
   };
 

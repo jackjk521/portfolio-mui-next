@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
-  
+
   const avatarStyle = {
     xs: isSmallScreen ? 12 : columnSettings.xs,
     sm: columnSettings.sm,
@@ -45,6 +45,13 @@ export default function Home() {
   const descriptionStyle = {
     textAlign: isSmallScreen ? "center" : "left",
     fontSize: isSmallScreen ? "1rem" : "1.125rem", // Adjust font size as needed
+  };
+
+  const boxPadding = {
+    // Use Material-UI theme.spacing value for responsive padding
+    padding: isSmallScreen ? 2 : (theme) => theme.spacing(2), // Adjust the spacing value as needed
+    paddingRight: isSmallScreen ? 2 : (theme) => theme.spacing(4),
+    paddingLeft: isSmallScreen ? 2 : (theme) => theme.spacing(6),
   };
 
   return (
@@ -57,11 +64,10 @@ export default function Home() {
       </Head>
 
       {/* Personal Div  */}
-      <Box sx={{ flexGrow: 1, padding: 2 }}>
+      <Box sx={{ flexGrow: 1, ...boxPadding }}>
         <Grid container spacing={2}>
           {/* Avatar  */}
-          <Grid
-            {...avatarStyle}>
+          <Grid {...avatarStyle}>
             <Item>
               {/* Avatar Image  */}
               <Image

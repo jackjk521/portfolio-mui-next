@@ -23,7 +23,6 @@ export default function ResponsiveGrid({ size, icon, skills, ratings }) {
   return (
     <Box sx={{ flexGrow: 1, padding: 2 }}>
       <Grid container spacing={2} columns={{ xs: 4, sm: 6, md: 12 }}>
-
         {skills.map((skill, index) => (
           <Grid
             key={index}
@@ -31,14 +30,13 @@ export default function ResponsiveGrid({ size, icon, skills, ratings }) {
             sm={columnSettings.sm}
             md={columnSettings.md}>
             <Item textAlign="center" elevation={3}>
-              
               {/* Logo Icon  */}
               <Icon altName={skill} />
               {/* Skill name  */}
-              {skill}
+              { skill == "CSharp" ? "C#" : skill }
+
               {/* Rating for each skill  */}
               <Rating name="read-only" value={ratings[skill]} readOnly />
-
             </Item>
           </Grid>
         ))}

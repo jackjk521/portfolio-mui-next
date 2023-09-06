@@ -31,6 +31,9 @@ function ResponsiveIcons({ altName }) {
           width: "100px", // Adjust the size as needed
           height: "100px", // Adjust the size as needed
           // borderRadius: "50%", // Make it round
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center", 
           overflow: "hidden", // Hide any content that overflows the rounded shape
         }}>
         <Image
