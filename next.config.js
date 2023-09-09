@@ -11,3 +11,12 @@ const withPWA = require('next-pwa')({
 module.exports = withPWA({
   // other Next.js configuration options here
 });
+
+// next.config.js
+
+// module.exports = {
+//   webpack(config) {
+//     config.resolve.modules.push(__dirname);
+//     return config;
+//   }, 
+// };

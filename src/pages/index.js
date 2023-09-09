@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Home.module.css";
 
 // Material UI
 import Box from "@mui/material/Box";
@@ -40,6 +40,9 @@ export default function Home() {
     xs: isSmallScreen ? 12 : columnSettings.xs,
     sm: columnSettings.sm,
     md: columnSettings.md,
+    display: "flex",
+    justifyContent: "center", // Horizontally center
+    alignItems: "center", // Vertically center
   };
 
   const descriptionStyle = {
@@ -68,17 +71,17 @@ export default function Home() {
         <Grid container spacing={2}>
           {/* Avatar  */}
           <Grid {...avatarStyle}>
-            <Item>
+           
               {/* Avatar Image  */}
               <Image
-                src="/images/space-dog.png"
+                src="/images/profile.jpg"
                 layout="intrinsic"
                 width={100}
                 height={100}
                 alt="Avatar"
                 style={{ borderRadius: "50%" }}
               />
-            </Item>
+  
           </Grid>
 
           {/* Description  */}
