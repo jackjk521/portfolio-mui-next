@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
+import Typography from "@mui/material/Typography";
 
 import FlipCard from "./flip_cards";
 
@@ -38,7 +39,14 @@ export default function SoftSkillGrid({ size }) {
   ];
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2 }}>
+    <Box sx={{ flexGrow: 1, padding: 2, py: "3rem", pb: "6rem" }}>
+      <Typography
+        textAlign="center"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold" }}
+        gutterBottom>
+        Soft Skills
+      </Typography>
       <Grid container spacing={spacing} columns={{ xs: 4, sm: 8, md: 12 }}>
         <Grid
           xs={columnSettings.xs}

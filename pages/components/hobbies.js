@@ -29,7 +29,22 @@ export default function HobbiesGrid({ size, hobbies }) {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2, px: "3rem"}}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        padding: 2,
+        pb: "4rem",
+        px: "3rem",
+        backgroundColor: "#ae9789",
+      }}>
+      <Typography
+        textAlign="left"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold", color: "#FFFFFF" }}
+        gutterBottom>
+        Hobbies
+      </Typography>
+
       <Grid
         container
         spacing={2}

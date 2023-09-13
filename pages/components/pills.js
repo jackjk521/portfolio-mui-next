@@ -10,6 +10,8 @@ const pillButtonStyle = {
   textTransform: "none",
   padding: "8px 16px", // Adjust padding as needed
   margin: "4px", // Adjust margin as needed
+  borderColor: "#989da6",
+  color: "#00000"
 };
 
 const ResponsivePillButtons = () => {

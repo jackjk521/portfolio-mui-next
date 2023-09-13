@@ -20,6 +20,10 @@ const Accordion = styled((props) => (
   "&:before": {
     display: "none",
   },
+
+  borderRadius: "1rem",
+  padding: "0.5rem",
+  margin: "0.5rem",
 }));
 
 const AccordionSummary = styled((props) => (
@@ -31,7 +35,7 @@ const AccordionSummary = styled((props) => (
   backgroundColor:
     theme.palette.mode === "dark"
       ? "rgba(255, 255, 255, .05)"
-      : "rgba(0, 0, 0, .03)",
+      : "background-color: #fff;",
   flexDirection: "row-reverse",
   "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
     transform: "rotate(90deg)",
@@ -140,13 +144,21 @@ export default function TechnicalSkillsGrid() {
           xl: 15, // Extra large screens
         },
         py: 2,
+        backgroundColor: "#ae9789",
+        pb: "3rem"
       }}>
+      <Typography
+        textAlign="center"
+        variant="h3"
+        sx={{ p: 3, fontWeight: "bold", color: "#FFFFFF" }}
+        gutterBottom>
+        Technical Skills
+      </Typography>
+
       <Accordion
         expanded={expanded === "featuredSkills"}
         onChange={handleChange("featuredSkills")}>
-        <AccordionSummary
-          aria-controls="panel1d-content"
-          id="panel1d-header">
+        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography variant="h6" textAlign="center">
             Featured
           </Typography>
@@ -160,7 +172,9 @@ export default function TechnicalSkillsGrid() {
         expanded={expanded === "webDevSkills"}
         onChange={handleChange("webDevSkills")}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography variant="h6" textAlign="center">Web Development</Typography>
+          <Typography variant="h6" textAlign="center">
+            Web Development
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CustomGrid skills={webSkills} ratings={webRatings} />
@@ -171,7 +185,9 @@ export default function TechnicalSkillsGrid() {
         expanded={expanded === "OOPSkills"}
         onChange={handleChange("OOPSkills")}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography variant="h6" textAlign="center">Object Oriented Programming</Typography>
+          <Typography variant="h6" textAlign="center">
+            Object Oriented Programming
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CustomGrid skills={OOPSkills} ratings={OOPRatings} />
@@ -182,7 +198,9 @@ export default function TechnicalSkillsGrid() {
         expanded={expanded === "dataSkills"}
         onChange={handleChange("dataSkills")}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography variant="h6" textAlign="center">Data Analytics</Typography>
+          <Typography variant="h6" textAlign="center">
+            Data Analytics
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CustomGrid skills={dataSkills} ratings={dataRatings} />
@@ -193,7 +211,9 @@ export default function TechnicalSkillsGrid() {
         expanded={expanded === "hostingSkills"}
         onChange={handleChange("hostingSkills")}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography variant="h6" textAlign="center">Hosting Services</Typography>
+          <Typography variant="h6" textAlign="center">
+            Hosting Services
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CustomGrid skills={hostingSkills} ratings={hostingRatings} />
@@ -204,7 +224,10 @@ export default function TechnicalSkillsGrid() {
         expanded={expanded === "noCodeSkills"}
         onChange={handleChange("noCodeSkills")}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography variant="h6" textAlign="center"> No Code Platforms</Typography>
+          <Typography variant="h6" textAlign="center">
+            {" "}
+            No Code Platforms
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CustomGrid skills={noCodeSkills} ratings={noCodeRatings} />
@@ -215,7 +238,10 @@ export default function TechnicalSkillsGrid() {
         expanded={expanded === "versionControlSkills"}
         onChange={handleChange("versionControlSkills")}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography variant="h6" textAlign="center"> Version Control or DevOps</Typography>
+          <Typography variant="h6" textAlign="center">
+            {" "}
+            Version Control or DevOps
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <CustomGrid

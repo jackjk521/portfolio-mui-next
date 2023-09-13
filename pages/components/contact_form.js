@@ -11,7 +11,7 @@ import {
 const ContactForm = () => {
 
   return (
-    <Container component="main" maxWidth="xs" sx={{padding: 4}}>
+    <Container component="main" maxWidth="xs" sx={{padding: 4  }}>
       {/* <Typography variant="subtitle" textAlign="center">
         Interested on my services and want to reach out then here is your chance
       </Typography> */}

@@ -71,17 +71,15 @@ export default function Home() {
         <Grid container spacing={2}>
           {/* Avatar  */}
           <Grid {...avatarStyle}>
-           
-              {/* Avatar Image  */}
-              <Image
-                src="/images/profile.jpg"
-                layout="intrinsic"
-                width={100}
-                height={100}
-                alt="Avatar"
-                style={{ borderRadius: "50%" }}
-              />
-  
+            {/* Avatar Image  */}
+            <Image
+              src="/images/profile.jpg"
+              layout="intrinsic"
+              width={100}
+              height={100}
+              alt="Avatar"
+              style={{ borderRadius: "50%" }}
+            />
           </Grid>
 
           {/* Description  */}
@@ -103,65 +101,60 @@ export default function Home() {
       </Box>
 
       {/* Hobbies  */}
-      <Typography
-        textAlign="center"
-        variant="h3"
-        sx={{ p: 3, fontWeight: "bold" }}
-        gutterBottom>
-        Hobbies
-      </Typography>
-
       <HobbiesGrid id="" size={4} hobbies={hobbyList} />
 
       {/* Soft Skills */}
       <div id="Skills">
-        <Typography
-          textAlign="center"
-          variant="h3"
-          sx={{ p: 3, fontWeight: "bold" }}
-          gutterBottom>
-          Soft Skills
-        </Typography>
-        {/* BUG : not responsive in mobile  */}
-
         <SoftSkillsGrid />
       </div>
 
       {/* Technical Skills */}
-      <Typography
-        textAlign="center"
-        variant="h3"
-        sx={{ p: 3, fontWeight: "bold" }}
-        gutterBottom>
-        Technical Skills
-      </Typography>
-
       <TechnicalSkillsGrid />
 
       {/* Project Showcase */}
       <div id="Projects">
-        <Typography
-          textAlign="center"
-          variant="h3"
-          sx={{ p: 3, fontWeight: "bold" }}
-          gutterBottom>
-          Project Showcase
-        </Typography>
-        <Pills />
+        <Box
+          sx={{
+            flexGrow: 1,
+            padding: 2,
+            py: "4rem",
+            px: "3rem",
+          }}>
+          <Typography
+            textAlign="center"
+            variant="h3"
+            sx={{ p: 3, fontWeight: "bold" }}
+            gutterBottom>
+            Project Showcase
+          </Typography>
+          <Pills />
+        </Box>
       </div>
 
       {/*Contact Me */}
-      <Typography
-        textAlign="center"
-        variant="h3"
-        sx={{ p: 3, fontWeight: "bold" }}
-        gutterBottom>
-        Contact Me
-      </Typography>
-      <Typography textAlign="center" variant="h6" gutterBottom>
-        Interested on my services and want to reach out then here is your chance
-      </Typography>
-      <ContactFrom />
+      <div id="Contact">
+        <Box
+          sx={{
+            flexGrow: 1,
+            padding: 2,
+            py: "4rem",
+            px: "3rem",
+            backgroundColor: "lightgray"
+          }}>
+          <Typography
+            textAlign="center"
+            variant="h3"
+            sx={{ p: 3, fontWeight: "bold" }}
+            gutterBottom>
+            Contact Me
+          </Typography>
+          <Typography textAlign="center" variant="h6" gutterBottom>
+            Interested on my services and want to reach out then here is your
+            chance
+          </Typography>
+          <ContactFrom />
+        </Box>
+      </div>
     </>
   );
 }
