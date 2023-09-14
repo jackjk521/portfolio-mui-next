@@ -145,7 +145,8 @@ export default function TechnicalSkillsGrid() {
         },
         py: 2,
         backgroundColor: "#ae9789",
-        pb: "3rem"
+        pb: "3rem",
+        px: "10rem",
       }}>
       <Typography
         textAlign="center"

@@ -39,7 +39,7 @@ export default function SoftSkillGrid({ size }) {
   ];
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2, py: "3rem", pb: "6rem" }}>
+    <Box sx={{ flexGrow: 1, padding: 2, py: "3rem", pb: "6rem", px: "10rem", backgroundColor: "#FFFFFF" }}>
       <Typography
         textAlign="center"
         variant="h3"

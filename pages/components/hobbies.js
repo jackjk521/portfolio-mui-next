@@ -34,7 +34,7 @@ export default function HobbiesGrid({ size, hobbies }) {
         flexGrow: 1,
         padding: 2,
         pb: "4rem",
-        px: "3rem",
+        px: "10rem",
         backgroundColor: "#ae9789",
       }}>
       <Typography
