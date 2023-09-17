@@ -143,9 +143,9 @@ export default function Home() {
           </Typography>
           <Typography textAlign="center" variant="h6" gutterBottom>
             Interested on my services and want to reach out then here is your
-            chance through my email
+            chance
           </Typography>
-          {/* <ContactFrom /> */}
+          <ContactFrom />
         </Box>
       </div>
     </Box>
