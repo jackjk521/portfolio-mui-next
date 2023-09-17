@@ -19,8 +19,7 @@
 //       callback(info);
 //     } catch (error) {
 //       console.log(error);
-//     } 
+//     }
 //   };
-  
 
 // export default SENDMAIL;
