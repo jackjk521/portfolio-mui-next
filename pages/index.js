@@ -73,7 +73,7 @@ export default function Home() {
           {/* Avatar  */}
           <Grid item {...avatarStyle}>
             <Image
-              src="/images/profile.jpg"
+              src="/images/profile.png"
               layout="fill"
               objectFit="cover"
               alt="Avatar"
