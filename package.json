@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build --legacy-peer-deps",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "vercel": "next"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.6",
     "@mui/material": "^5.14.6",
     "@mui/styles": "^5.14.7",
