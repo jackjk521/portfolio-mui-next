@@ -108,3 +108,5 @@ export default function HobbiesGrid({ size, hobbies }) {
     </Box>
   );
 }
+
+

@@ -6,7 +6,7 @@ import Rating from "@mui/material/Rating";
 import Item from "./item";
 import Icon from "./icon";
 
-export default function ResponsiveGrid({ size, icon, skills, ratings }) {
+export default function ResponsiveGrid({ size, skills, ratings }) {
   const columnSettings = {
     xs: 2,
     sm: size === 2 ? 6 : 3,
@@ -25,6 +25,7 @@ export default function ResponsiveGrid({ size, icon, skills, ratings }) {
       <Grid container spacing={2} columns={{ xs: 4, sm: 6, md: 12 }}>
         {skills.map((skill, index) => (
           <Grid
+            item 
             key={index}
             xs={columnSettings.xs}
             sm={columnSettings.sm}
