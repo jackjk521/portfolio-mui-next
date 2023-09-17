@@ -7,6 +7,7 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import CustomGrid from "./res_grid";
 
@@ -56,6 +57,8 @@ export default function TechnicalSkillsGrid() {
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
+
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   // Featured Skills Information
   const featuredSkills = ["React", "MySQL", "Laravel"];
@@ -146,7 +149,7 @@ export default function TechnicalSkillsGrid() {
         py: 2,
         backgroundColor: "#ae9789",
         pb: "3rem",
-        px: "10rem",
+        px: isSmallScreen ? 0 : "10rem",
       }}>
       <Typography
         textAlign="center"

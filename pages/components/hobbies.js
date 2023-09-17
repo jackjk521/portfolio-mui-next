@@ -4,6 +4,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 // Components
 import Item from "./item";
@@ -28,13 +29,15 @@ export default function HobbiesGrid({ size, hobbies }) {
     md: 4,
   };
 
+  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
+
   return (
     <Box
       sx={{
         flexGrow: 1,
         padding: 2,
         pb: "4rem",
-        px: "10rem",
+        px: isMediumScreen ? "1rem" : "10rem",
         backgroundColor: "#ae9789",
       }}>
       <Typography

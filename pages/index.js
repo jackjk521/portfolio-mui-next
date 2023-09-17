@@ -11,9 +11,6 @@ import Grid from "@mui/material/Unstable_Grid2";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 // Components
-import Icon from "./components/icon";
-import Item from "./components/item";
-import CustomGrid from "./components/res_grid";
 import HobbiesGrid from "./components/hobbies";
 import SoftSkillsGrid from "./components/soft_skills";
 import TechnicalSkillsGrid from "./components/technical_skills";
@@ -36,10 +33,11 @@ export default function Home() {
   ];
 
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   const avatarStyle = {
     xs: isSmallScreen ? 12 : columnSettings.xs,
-    sm: columnSettings.sm,
+    sm: isSmallScreen ? 12 : columnSettings.sm,
     md: columnSettings.md,
     display: "flex",
     justifyContent: "center", // Horizontally center
@@ -73,7 +71,7 @@ export default function Home() {
       <Box sx={{ flexGrow: 1, ...boxPadding, backgroundColor: "#FFFFFF" }}>
         <Grid container p={0} spacing={2}>
           {/* Avatar  */}
-          <Grid item xs={12} md={4} width={100} height={100} {...avatarStyle}>
+          <Grid item {...avatarStyle}>
             <Image
               src="/images/profile.jpg"
               layout="fill"
@@ -83,7 +81,7 @@ export default function Home() {
           </Grid>
 
           {/* Description  */}
-          <Grid item xs={12} md={4} width={100} height={100} {...avatarStyle}>
+          <Grid item {...avatarStyle}>
             <Typography variant="body1" gutterBottom sx={descriptionStyle}>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
               blanditiis tenetur unde suscipit, quam beatae rerum inventore
@@ -145,9 +143,9 @@ export default function Home() {
           </Typography>
           <Typography textAlign="center" variant="h6" gutterBottom>
             Interested on my services and want to reach out then here is your
-            chance
+            chance through my email
           </Typography>
-          <ContactFrom />
+          {/* <ContactFrom /> */}
         </Box>
       </div>
     </Box>

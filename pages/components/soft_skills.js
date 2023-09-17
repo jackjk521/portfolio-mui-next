@@ -2,6 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import FlipCard from "./flip_cards";
 
@@ -18,6 +19,8 @@ export default function SoftSkillGrid({ size }) {
     sm: 2,
     md: 3,
   };
+
+  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
 
   const teamPlayer = [
     "Effective Communication",
@@ -39,7 +42,15 @@ export default function SoftSkillGrid({ size }) {
   ];
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2, py: "3rem", pb: "6rem", px: "10rem", backgroundColor: "#FFFFFF" }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        padding: 2,
+        py: "3rem",
+        pb: "6rem",
+        px: isMediumScreen ? "1rem" : "10rem",
+        backgroundColor: "#FFFFFF",
+      }}>
       <Typography
         textAlign="center"
         variant="h3"

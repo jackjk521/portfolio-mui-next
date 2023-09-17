@@ -29,7 +29,7 @@ const ContactForm = () => {
       if (response.ok) {
         // Contact successfully submitted
         // Do something with the response if needed
-        console.log("sucess");
+        console.log("success");
       } else {
         // Handle error response
       }
