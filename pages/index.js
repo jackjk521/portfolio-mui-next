@@ -11,11 +11,11 @@ import Grid from "@mui/material/Unstable_Grid2";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 // Components
-import HobbiesGrid from "./components/hobbies";
-import SoftSkillsGrid from "./components/soft_skills";
-import TechnicalSkillsGrid from "./components/technical_skills";
-import Pills from "./components/pills";
-import ContactFrom from "./components/contact_form";
+import HobbiesGrid from "../components/hobbies";
+import SoftSkillsGrid from "../components/soft_skills";
+import TechnicalSkillsGrid from "../components/technical_skills";
+import Pills from "../components/pills";
+import ContactFrom from "../components/contact_form";
 
 export default function Home() {
   const columnSettings = {
