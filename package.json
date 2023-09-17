@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel": "next"
+    "vercel": "next",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -30,5 +31,12 @@
     "react-flippy": "^1.1.0",
     "react-intersection-observer": "^9.5.2",
     "sequelize": "^6.33.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.8.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
   }
 }
