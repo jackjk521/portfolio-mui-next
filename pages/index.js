@@ -17,6 +17,7 @@ import TechnicalSkillsGrid from "../components/technical_skills";
 import Pills from "../components/pills";
 import ContactFrom from "../components/contact_form";
 
+
 export default function Home() {
   const columnSettings = {
     xs: 6,
@@ -42,7 +43,7 @@ export default function Home() {
     display: "flex",
     justifyContent: "center", // Horizontally center
     alignItems: "center", // Vertically center
-    height: "20rem",
+    height: "150rem",
     position: "relative",
   };
 
