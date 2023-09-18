@@ -20,10 +20,11 @@ function HomeIcon(props) {
 
 export default function Footer() {
   return (
+    
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#ae9789",
+        backgroundColor: "#3B444B",
         color: "#fff",
         py: 3,
         textAlign: "center",

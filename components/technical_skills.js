@@ -149,7 +149,7 @@ export default function TechnicalSkillsGrid() {
         py: 2,
         backgroundColor: "#ae9789",
         pb: "3rem",
-        px: isSmallScreen ? 0 : "10rem",
+        // px: isSmallScreen ? 0 : "10rem",
       }}>
       <Typography
         textAlign="center"
