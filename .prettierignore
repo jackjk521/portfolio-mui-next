@@ -1,0 +1,4 @@
+# exclude from prettier
+dist
+node_modules
+package.json

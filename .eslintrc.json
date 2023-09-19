@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "globals": {
+    "Next": "readonly" // defined NextJS in functional components and JSX code
+  },
+  "rules": {
+    "no-unused-vars": "warn" // if variable is not defined in the file
+  }
 }

@@ -1,19 +1,23 @@
-import * as React from "react";
+import * as React from 'react';
 
 // Material UI
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Unstable_Grid2";
-import Typography from "@mui/material/Typography";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Unstable_Grid2';
+import Typography from '@mui/material/Typography';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Components
-import Item from "./item";
+import Item from './item';
 
 // Icons
-import TrendingUpIcon from "@mui/icons-material/TrendingUp";
-import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
-import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import FlightTakeoffIcon from '@mui/icons-material/FlightTakeoff';
+
+// Animations
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function HobbiesGrid({ size, hobbies }) {
   const columnSettings = {
@@ -29,22 +33,50 @@ export default function HobbiesGrid({ size, hobbies }) {
     md: 4,
   };
 
-  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down("md"));
+  const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
+  const hobbiesBox = {
+    flexGrow: 1,
+    padding: 2,
+    pb: '4rem',
+    px: isMediumScreen ? '1rem' : '10rem',
+    // backgroundColor: "#ae9789",
+    backgroundColor: 'white',
+    color: 'black',
+  };
+
+  const hobbiesHeading = {
+    py: 2,
+    fontWeight: 900,
+    color: 'inherit',
+  };
+
+  const hobbiesCard = {
+    textAlign: 'center',
+    p: 3,
+    fontSize: isSmallScreen ? '1rem' : '1.5rem',
+    border: 3,
+  };
+
+  // Animation when scrolled
+  const [ref, inView] = useInView({
+    triggerOnce: false, // Only trigger the animation once or false for always
+    threshold: 0.1, // Customize the visibility threshold as needed
+  });
 
   return (
     <Box
       sx={{
-        flexGrow: 1,
-        padding: 2,
-        pb: "4rem",
-        px: isMediumScreen ? "1rem" : "10rem",
-        backgroundColor: "#ae9789",
-      }}>
+        ...hobbiesBox,
+      }}
+    >
       <Typography
         textAlign="left"
         variant="h3"
-        sx={{ p: 3, fontWeight: "bold", color: "#FFFFFF" }}
-        gutterBottom>
+        sx={{ ...hobbiesHeading }}
+        gutterBottom
+      >
         Hobbies
       </Typography>
 
@@ -52,30 +84,37 @@ export default function HobbiesGrid({ size, hobbies }) {
         container
         spacing={2}
         justifyContent="center"
-        columns={{ xs: 2, sm: 8, md: 12 }}>
+        columns={{ xs: 2, sm: 8, md: 12 }}
+      >
         {/* Financial Exploration  */}
+
         <Grid
           xs={columnSettings.xs}
           sm={columnSettings.sm}
-          md={columnSettings.md}>
-          <Item>
-            <TrendingUpIcon />
-            <Typography textAlign="center" sx={{ p: 2 }}>
-              {hobbies[0]}
-            </Typography>
-          </Item>
+          md={columnSettings.md}
+        >
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: inView ? 1 : 0 }} // Update opacity based on visibility
+            transition={{ duration: 0.5 }} // Customize the animation duration as needed
+          >
+            <Item sx={{...hobbiesCard}}>
+              <TrendingUpIcon />
+              <Typography>{hobbies[0]}</Typography>
+            </Item>
+          </motion.div>
         </Grid>
 
         {/* Active Lifestyle  */}
         <Grid
           xs={columnSettings.xs}
           sm={columnSettings.sm}
-          md={columnSettings.md}>
-          <Item>
+          md={columnSettings.md}
+        >
+          <Item sx={{...hobbiesCard}}>
             <FitnessCenterIcon />
-            <Typography textAlign="center" sx={{ p: 2 }}>
-              {hobbies[1]}
-            </Typography>
+            <Typography>{hobbies[1]}</Typography>
           </Item>
         </Grid>
 
@@ -83,12 +122,11 @@ export default function HobbiesGrid({ size, hobbies }) {
         <Grid
           xs={columnSettings.xs}
           sm={columnSettings.sm}
-          md={columnSettings.md}>
-          <Item>
+          md={columnSettings.md}
+        >
+          <Item sx={{...hobbiesCard}}>
             <SportsEsportsIcon />
-            <Typography textAlign="center" sx={{ p: 2 }}>
-              {hobbies[2]}
-            </Typography>
+            <Typography>{hobbies[2]}</Typography>
           </Item>
         </Grid>
 
@@ -96,17 +134,14 @@ export default function HobbiesGrid({ size, hobbies }) {
         <Grid
           xs={columnSettings.xs}
           sm={columnSettings.sm}
-          md={columnSettings.md}>
-          <Item>
+          md={columnSettings.md}
+        >
+          <Item sx={{...hobbiesCard}}>
             <FlightTakeoffIcon />
-            <Typography textAlign="center" sx={{ p: 2 }}>
-              {hobbies[3]}
-            </Typography>
+            <Typography>{hobbies[3]}</Typography>
           </Item>
         </Grid>
       </Grid>
     </Box>
   );
 }
-
-

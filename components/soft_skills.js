@@ -41,23 +41,34 @@ export default function SoftSkillGrid({ size }) {
     "Adaptability",
   ];
 
+  const boxStyles = {
+    flexGrow: 1,
+    padding: 2,
+    py: ".5rem",
+    pb: "6rem",
+    px: isMediumScreen ? "1rem" : "10rem",
+    backgroundColor: "#FFFFFF",
+  }
+
+  const softHeading = {
+    py: 2,
+    fontWeight: 900,
+    color: 'inherit',
+  };
+
   return (
     <Box
       sx={{
-        flexGrow: 1,
-        padding: 2,
-        py: "3rem",
-        pb: "6rem",
-        px: isMediumScreen ? "1rem" : "10rem",
-        backgroundColor: "#FFFFFF",
+       ...boxStyles
       }}>
       <Typography
         textAlign="center"
         variant="h3"
-        sx={{ p: 3, fontWeight: "bold" }}
+        sx={{ ...softHeading }}
         gutterBottom>
         Soft Skills
       </Typography>
+
       <Grid container spacing={spacing} columns={{ xs: 4, sm: 8, md: 12 }}>
         <Grid
           xs={columnSettings.xs}

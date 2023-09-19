@@ -134,11 +134,8 @@ export default function TechnicalSkillsGrid() {
     Azure: 3,
   };
 
-  return (
-    <Box
-      container
-      sx={{
-        flexGrow: 1,
+  const boxStyles = {
+    flexGrow: 1,
         px: {
           xs: 2, // Extra small screens (default)
           sm: 4, // Small screens
@@ -147,14 +144,20 @@ export default function TechnicalSkillsGrid() {
           xl: 15, // Extra large screens
         },
         py: 2,
-        backgroundColor: "#ae9789",
+        backgroundColor: "white",
         pb: "3rem",
-        px: isSmallScreen ? 0 : "10rem",
+  }
+
+  return (
+    <Box
+      container
+      sx={{
+     ...boxStyles
       }}>
       <Typography
         textAlign="center"
         variant="h3"
-        sx={{ p: 3, fontWeight: "bold", color: "#FFFFFF" }}
+        sx={{ p: 2, fontWeight: 900, color: "black" }}
         gutterBottom>
         Technical Skills
       </Typography>
