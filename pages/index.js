@@ -13,16 +13,8 @@ import HobbiesGrid from '../components/hobbies';
 import SoftSkillsGrid from '../components/soft_skills';
 import TechnicalSkillsGrid from '../components/technical_skills';
 import Projects from '../components/projects';
-import ContactFrom from '../components/contact_form';
 
 export default function Home() {
-  // Hobbies
-  const hobbyList = [
-    'Financial Exploration',
-    'Active Lifestyle',
-    'Entertainment',
-    'Travelling',
-  ];
 
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: '#FFFFF' }}>
@@ -36,22 +28,12 @@ export default function Home() {
       {/* Personal Div  */}
       <PersonalInfo />
 
-      {/* Hobbies  */}
-      <HobbiesGrid id="" size={4} hobbies={hobbyList} />
-
-      {/* Soft Skills */}
-      <div id="Skills">
-        <SoftSkillsGrid />
-      </div>
-
       {/* Technical Skills */}
       <TechnicalSkillsGrid />
 
       {/* Project Showcase */}
       <Projects />
 
-      {/*Contact Me */}
-      <ContactFrom /> 
     </Box>
   );
 }

@@ -17,6 +17,7 @@
     "@mui/material": "^5.14.6",
     "@mui/styles": "^5.14.7",
     "@next/font": "13.4.19",
+    "animate.css": "^4.1.1",
     "dotenv": "^16.3.1",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",

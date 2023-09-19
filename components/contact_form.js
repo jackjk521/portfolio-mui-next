@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@mui/styles';
 import { Container, Typography, TextField, Button, Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/system';
+import { useInView } from 'react-intersection-observer';
+
+// Animations
+import 'animate.css';
 
 const ContactForm = () => {
   const handleSubmit = async (e) => {
@@ -62,6 +66,11 @@ const ContactForm = () => {
     color: 'inherit',
   };
 
+  // Intersection Observer options
+  const options = {
+    threshold: 0.2,
+  };
+
   return (
     <div id="Contact">
       <Box
@@ -70,13 +79,16 @@ const ContactForm = () => {
         }}
       >
         <Typography
+          id="contact-heading"
           textAlign="center"
           variant="h3"
           sx={{ ...contactHeading }}
+          className="animate__heartBeat"
           gutterBottom
         >
           Contact Me
         </Typography>
+
         <Typography textAlign="center" variant="h6" gutterBottom>
           Interested on my services and want to reach out then here is your
           chance
@@ -124,7 +136,6 @@ const ContactForm = () => {
             </Button>
           </form>
         </StyledContainer>
-        
       </Box>
     </div>
   );

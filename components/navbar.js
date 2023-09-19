@@ -21,7 +21,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
 // Menu Items
-const pages = ['Projects', 'Skills'];
+const pages = ['Projects', 'About', 'Contact'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -126,7 +126,11 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    <Link href={`#${page}`}>{page}</Link>
+                    {page === 'Projects' ? (
+                      <Link href={`#${page}`}>{page}</Link>
+                    ) : (
+                      <Link href={`/${page}`}>{page}</Link>
+                    )}
                   </Typography>
                 </MenuItem>
               ))}
@@ -162,7 +166,11 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ ...pagesButtons }}
               >
-                <Tab label={`${page}`} href={`#${page}`} />
+                {page === 'Projects' ? (
+                  <Tab label={`${page}`} href={`#${page}`} />
+                ) : (
+                  <Tab label={`${page}`} href={`/${page.toLowerCase()}`} /> // this for links to pages
+                )}
               </Tabs>
             ))}
           </Box>
