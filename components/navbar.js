@@ -129,7 +129,7 @@ function ResponsiveAppBar() {
                     {page === 'Projects' ? (
                       <Link href={`#${page}`}>{page}</Link>
                     ) : (
-                      <Link href={`/${page}`}>{page}</Link>
+                      <Link href={`/${page.toLowerCase()}`}>{page}</Link>
                     )}
                   </Typography>
                 </MenuItem>
