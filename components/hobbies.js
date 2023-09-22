@@ -93,13 +93,18 @@ export default function HobbiesGrid({ size, hobbies }) {
           sm={columnSettings.sm}
           md={columnSettings.md}
         >
-          <motion.div
+          {/* <motion.div
             ref={ref}
             initial={{ opacity: 0 }}
             animate={{ opacity: inView ? 1 : 0 }} // Update opacity based on visibility
             transition={{ duration: 0.5 }} // Customize the animation duration as needed
+          > */}
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: 'spring', stiffness: 500, damping: 20 }}
           >
-            <Item sx={{...hobbiesCard}}>
+            <Item sx={{ ...hobbiesCard }}>
               <TrendingUpIcon />
               <Typography>{hobbies[0]}</Typography>
             </Item>
@@ -112,10 +117,21 @@ export default function HobbiesGrid({ size, hobbies }) {
           sm={columnSettings.sm}
           md={columnSettings.md}
         >
-          <Item sx={{...hobbiesCard}}>
-            <FitnessCenterIcon />
-            <Typography>{hobbies[1]}</Typography>
-          </Item>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              damping: 15,
+              delay: 0.5,
+            }}
+          >
+            <Item sx={{ ...hobbiesCard }}>
+              <FitnessCenterIcon />
+              <Typography>{hobbies[1]}</Typography>
+            </Item>
+          </motion.div>
         </Grid>
 
         {/* Entertainment  */}
@@ -124,10 +140,22 @@ export default function HobbiesGrid({ size, hobbies }) {
           sm={columnSettings.sm}
           md={columnSettings.md}
         >
-          <Item sx={{...hobbiesCard}}>
-            <SportsEsportsIcon />
-            <Typography>{hobbies[2]}</Typography>
-          </Item>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              damping: 15,
+              delay: 1,
+            }}
+          >
+            {' '}
+            <Item sx={{ ...hobbiesCard }}>
+              <SportsEsportsIcon />
+              <Typography>{hobbies[2]}</Typography>
+            </Item>
+          </motion.div>
         </Grid>
 
         {/* Travelling  */}
@@ -136,10 +164,22 @@ export default function HobbiesGrid({ size, hobbies }) {
           sm={columnSettings.sm}
           md={columnSettings.md}
         >
-          <Item sx={{...hobbiesCard}}>
-            <FlightTakeoffIcon />
-            <Typography>{hobbies[3]}</Typography>
-          </Item>
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              damping: 15,
+              delay: 1.5,
+            }}
+          >
+            {' '}
+            <Item sx={{ ...hobbiesCard }}>
+              <FlightTakeoffIcon />
+              <Typography>{hobbies[3]}</Typography>
+            </Item>
+          </motion.div>
         </Grid>
       </Grid>
     </Box>
