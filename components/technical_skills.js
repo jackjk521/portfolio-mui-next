@@ -144,7 +144,7 @@ export default function TechnicalSkillsGrid() {
           xl: 15, // Extra large screens
         },
         py: 2,
-        backgroundColor: "white",
+        backgroundColor: "#F6F5F0",
         pb: "3rem",
   }
 

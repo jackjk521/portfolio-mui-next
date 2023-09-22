@@ -9,13 +9,12 @@ import Typography from '@mui/material/Typography';
 
 // Components
 import PersonalInfo from '../components/personal_info';
-import HobbiesGrid from '../components/hobbies';
-import SoftSkillsGrid from '../components/soft_skills';
 import TechnicalSkillsGrid from '../components/technical_skills';
 import Projects from '../components/projects';
+import Services from '../components/services';
+
 
 export default function Home() {
-
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: '#FFFFF' }}>
       <Head>
@@ -34,6 +33,8 @@ export default function Home() {
       {/* Project Showcase */}
       <Projects />
 
+      {/* Services  */}
+      <Services />
     </Box>
   );
 }

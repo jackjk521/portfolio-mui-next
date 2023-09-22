@@ -34,16 +34,20 @@ export default function PersonalInfo() {
 
   const boxStyles = {
     flexGrow: 1,
-    px: isSmallScreen ? "1rem" : "7rem", 
-    py: isSmallScreen ? "1rem" : "4rem",
+    px: isSmallScreen ? '1rem' : '7rem',
+    py: isSmallScreen ? '1rem' : '4rem',
     backgroundColor: 'white',
   };
+
+  const textStyles = {
+    fontWeight: 900, 
+    width: "100%", 
+  }
   return (
     <>
       {/* Personal Div  */}
       <Box sx={{ ...boxStyles }}>
         <Grid container p={0} spacing={2}>
-          
           {/* Avatar  */}
           <Grid item {...avatarStyle}>
             {/* <Image
@@ -71,12 +75,21 @@ export default function PersonalInfo() {
 
           {/* Description  */}
           <Grid item {...avatarStyle}>
-            <Typography variant="body1" gutterBottom sx={descriptionStyle}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos
-              blanditiis tenetur unde suscipit, quam beatae rerum inventore
-              consectetur, neque doloribus, cupiditate numquam dignissimos
-              laborum fugiat deleniti? Eum quasi quidem quibusdam.
+            <Typography variant="h4" gutterBottom sx={{...textStyles}}>
+              Hi! I am Jed
+              <br></br>
+              <Typography
+              variant="h4"
+              gutterBottom
+              sx={{ ...descriptionStyle, ...textStyles}}
+            >
+              Software Engineer , 
+              <br></br>
+
+              Developer , Project Manager
             </Typography>
+            </Typography>
+           
           </Grid>
         </Grid>
       </Box>

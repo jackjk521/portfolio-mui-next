@@ -9,6 +9,7 @@ import Box from '@mui/material/Box';
 import HobbiesGrid from '../components/hobbies';
 import SoftSkillsGrid from '../components/soft_skills';
 import TechnicalSkillsGrid from '../components/technical_skills';
+import Timeline from "../components/timeline"
 
 export default function Home() {
   // Hobbies
@@ -38,6 +39,10 @@ export default function Home() {
 
       {/* Technical Skills */}
       {/* <TechnicalSkillsGrid /> */}
+
+      {/* Timeline  */}
+
+      <Timeline />
 
     </Box>
   );
