@@ -69,7 +69,7 @@ export default function ProjectGrid() {
         <Card variant="outlined">
           <CardContent>
             <Typography variant="h4" color="text.secondary" gutterBottom>
-              King's Quality BMS
+              King Quality BMS
             </Typography>
             <Typography variant="h5" component="div"></Typography>
             <Typography variant="body2">
