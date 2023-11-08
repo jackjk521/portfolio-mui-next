@@ -126,11 +126,7 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
-                    {page === 'Projects' ? (
-                      <Link href={`#${page}`}>{page}</Link>
-                    ) : (
-                      <Link href={`/${page.toLowerCase()}`}>{page}</Link>
-                    )}
+                    <Link href={`/${page.toLowerCase()}`}>{page}</Link>
                   </Typography>
                 </MenuItem>
               ))}
@@ -166,11 +162,7 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ ...pagesButtons }}
               >
-                {page === 'Projects' ? (
-                  <Tab label={`${page}`} href={`#${page}`} />
-                ) : (
-                  <Tab label={`${page}`} href={`/${page.toLowerCase()}`} /> // this for links to pages
-                )}
+                <Tab label={`${page}`} href={`/${page.toLowerCase()}`} />
               </Tabs>
             ))}
           </Box>

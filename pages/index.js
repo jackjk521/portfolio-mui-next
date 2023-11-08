@@ -5,12 +5,10 @@ import { Inter } from '@next/font/google';
 
 // Material UI
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 
 // Components
 import PersonalInfo from '../components/personal_info';
 import TechnicalSkillsGrid from '../components/technical_skills';
-import Projects from '../components/projects';
 import Services from '../components/services';
 
 
@@ -29,9 +27,6 @@ export default function Home() {
 
       {/* Technical Skills */}
       <TechnicalSkillsGrid />
-
-      {/* Project Showcase */}
-      <Projects />
 
       {/* Services  */}
       <Services />

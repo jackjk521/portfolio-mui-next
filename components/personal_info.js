@@ -49,7 +49,7 @@ export default function PersonalInfo() {
       <Box sx={{ ...boxStyles }}>
         <Grid container p={0} spacing={2}>
           {/* Avatar  */}
-          <Grid item {...avatarStyle}>
+          <Grid item xs={4} {...avatarStyle}>
             {/* <Image
               src="/images/profile.png"
               layout="fill"

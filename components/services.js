@@ -13,7 +13,7 @@ export default function Services() {
     },
     {
       icon: '/images/system_icon.png',
-      label: 'System',
+      label: 'Web Application',
     },
     {
       icon: '/images/project_management_icon.png',
@@ -38,13 +38,15 @@ export default function Services() {
   };
 
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  const isMediumScreen = useMediaQuery((theme) => theme.breakpoints.down('md'));
+
 
   const gridCentered = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    px: isSmallScreen ? '0.5rem' : '25rem',
-    py: isSmallScreen ? '0.5rem' : '1rem',
+    px: isSmallScreen || isMediumScreen ? '0' : '25rem',
+    py: isSmallScreen || isMediumScreen ? '0' : '1rem',
 
   };
 
@@ -58,7 +60,7 @@ export default function Services() {
       >
         Services
       </Typography>
-      <Grid container spacing={2} sx={{ ...gridCentered }}>
+      <Grid container p={0} spacing={2} sx={{ ...gridCentered }}>
         {gridItems.map((item, index) => (
           <Grid
             item

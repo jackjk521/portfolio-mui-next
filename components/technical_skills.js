@@ -61,9 +61,10 @@ export default function TechnicalSkillsGrid() {
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   // Featured Skills Information
-  const featuredSkills = ["React", "MySQL", "Laravel"];
+  const featuredSkills = ["React", "NextJS", "MySQL", "Laravel"];
   const featuredRatings = {
     React: 4,
+    NextJS: 4,
     MySQL: 5,
     Laravel: 4,
   };
@@ -86,7 +87,7 @@ export default function TechnicalSkillsGrid() {
     PhpMyAdmin: 4,
     NodeJS: 4,
     Javascript: 5,
-    CondeIgniter: 4,
+    CodeIgniter: 4,
     MongoDB: 4,
     Express: 4,
     jQuery: 3,

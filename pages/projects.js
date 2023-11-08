@@ -6,10 +6,9 @@ import { Inter } from '@next/font/google';
 import Box from '@mui/material/Box';
 
 // Components
-import ContactFrom from '../components/contact_form';
+import ProjectGrid from '../components/project_grid';
 
-export default function Contact() {
-
+export default function Projects() {
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: '#FFFFF' }}>
       <Head>
@@ -19,8 +18,7 @@ export default function Contact() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/*Contact Me */}
-      <ContactFrom /> 
+      <ProjectGrid />
     </Box>
   );
 }

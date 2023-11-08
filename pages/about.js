@@ -11,7 +11,7 @@ import SoftSkillsGrid from '../components/soft_skills';
 import TechnicalSkillsGrid from '../components/technical_skills';
 import Timeline from "../components/timeline"
 
-export default function Home() {
+export default function About() {
   // Hobbies
   const hobbyList = [
     'Financial Exploration',
