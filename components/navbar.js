@@ -78,7 +78,7 @@ function ResponsiveAppBar() {
           {/* Hamburger when it goes to small screens */}
 
           {/* Logo Icon  */}
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           {/* Logo Name  */}
           <Typography
             variant="h5"
@@ -135,12 +135,12 @@ function ResponsiveAppBar() {
 
           {/* Desktop view  */}
           {/* Logo Icon  */}
-          <AdbIcon
+          {/* <AdbIcon
             sx={{
               display: { xs: 'flex', md: 'none' },
               mr: 1,
             }}
-          />
+          /> */}
           {/* Logo Name  */}
           <Typography
             variant="h5"

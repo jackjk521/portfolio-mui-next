@@ -42,6 +42,7 @@ export default function PersonalInfo() {
   const textStyles = {
     fontWeight: 900, 
     width: "100%", 
+    textAlign: isSmallScreen ? 'center' : 'left'
   }
   return (
     <>

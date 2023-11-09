@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 export default function ProjectGrid() {
   return (
     <Grid container p={2} spacing={2}>
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         {' '}
         <Card variant="outlined">
           <CardContent>
@@ -37,7 +37,7 @@ export default function ProjectGrid() {
           </CardActions>
         </Card>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         {' '}
         <Card variant="outlined">
           <CardContent>
@@ -64,7 +64,7 @@ export default function ProjectGrid() {
           </CardActions>
         </Card>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         {' '}
         <Card variant="outlined">
           <CardContent>
@@ -93,7 +93,7 @@ export default function ProjectGrid() {
           </CardActions>
         </Card>
       </Grid>
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         {' '}
         <Card variant="outlined">
           <CardContent>
@@ -124,7 +124,7 @@ export default function ProjectGrid() {
         </Card>
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         {' '}
         <Card variant="outlined">
           <CardContent>
@@ -149,7 +149,7 @@ export default function ProjectGrid() {
         </Card>
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         {' '}
         <Card variant="outlined">
           <CardContent>
@@ -179,7 +179,7 @@ export default function ProjectGrid() {
         </Card>
       </Grid>
 
-      <Grid item xs={4}>
+      <Grid item xs={12} md={4}>
         {' '}
         <Card variant="outlined">
           <CardContent>
